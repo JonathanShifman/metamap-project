@@ -6,12 +6,3 @@
 1|MM|0|Renal|0|[Body Part, Organ, or Organ Component]|[""-tx-1-""]|TX|65:5|0
 1|MM|0|Cardiovascular Systems|0|[Body System]|[""-tx-1-""]|TX|76:22|0
 2|MM|0|Macrophages|0|[Cell:Laboratory Procedure:Intellectual Product:Body Substance]|[""-tx-1-""]|TX|1:11|0
-2|MM|0|Most|0|[Quantitative Concept]|[""-tx-1-""]|TX|21:4|0
-2|MM|0|Abundant|0|[Qualitative Concept]|[""-tx-1-""]|TX|26:8|0
-2|MM|0|Immune Cell|0|[Cell]|[""-tx-1-""]|TX|39:23|0
-2|MM|0|placing|0|[Spatial Concept]|[""-tx-1-""]|TX|64:7|0
-2|MM|0|Unique|0|[Qualitative Concept]|[""-tx-1-""]|TX|82:6|0
-2|MM|0|Position|0|[Spatial Concept]|[""-tx-1-""]|TX|89:8|0
-2|MM|0|To|0|[Geographic Area:Amino Acid, Peptide, or Protein,Enzyme:Qualitative Concept]|[""-tx-1-""]|TX|98:2|0
-2|MM|0|mediators |0|[Organic Chemical,Pharmacologic Substance]|[""-tx-1-""]|TX|114:9|0
-2|MM|0|Components|0|[Manufactured Object]|[""-tx-1-""]|TX|138:10|0
