@@ -12,10 +12,12 @@ def f(sentence):
     for concept in concepts:
         concept_dict = dict()
         concept_dict['pos_info'] = concept.pos_info
-        concept_dict['preferred_nane'] = concept.preferred_nane
+        concept_dict['preferred_name'] = concept.preferred_name
         concept_dict['cui'] = concept.cui
         output_dict[current_index] = concept_dict
         current_index += 1
+
+    return output_dict
 
 
 sentence = 'Hypertension is a multifactorial disease involving the nervous, renal, ' \
