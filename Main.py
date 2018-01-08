@@ -1,12 +1,6 @@
 from MetaMapWrapper import *
-import configparser
 
-
-config = configparser.ConfigParser()
-config.read('config.ini')
-meta_map_path = config.get('general', 'meta_map_path')
-wrapper = MetaMapWrapper(meta_map_path)
-
+wrapper = MetaMapWrapper()
 
 sentence = 'Hypertension is a multifactorial disease involving the nervous, renal, ' \
            'and cardiovascular systems. '
