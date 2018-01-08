@@ -12,7 +12,7 @@ class MetaMapWrapper(object):
         self.relevant_field_names = config.get('general', 'relevant_field_names').split(',')
 
     def extract_data_from_pos_info(self, sentence, pos_info):
-        split_pos_info = pos_info.split(':')
+        split_pos_info = pos_info.split('/')
         starting_index = int(split_pos_info[0]) - 1
         length = int(split_pos_info[1])
         return sentence[starting_index:starting_index+length], str(starting_index)
