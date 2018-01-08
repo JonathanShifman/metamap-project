@@ -14,8 +14,8 @@ class MetaMapWrapper(object):
     def extract_data_from_pos_info(self, sentence, pos_info):
         split_pos_info = pos_info.split(':')
         starting_index = int(split_pos_info[0]) - 1
-        ending_index = int(split_pos_info[1])
-        return sentence[starting_index:ending_index], str(starting_index)
+        length = int(split_pos_info[1])
+        return sentence[starting_index:starting_index+length], str(starting_index)
 
 
     def analyze_sentence(self, sentence):
