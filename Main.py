@@ -1,8 +1,15 @@
 from MetaMapWrapper import *
+import configparser
+
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+meta_map_path = config.get('general', 'meta_map_path')
+wrapper = MetaMapWrapper(meta_map_path)
+
 
 sentence = 'Hypertension is a multifactorial disease involving the nervous, renal, ' \
            'and cardiovascular systems. '
-wrapper = MetaMapWrapper('/home/jonathans/meta-map-project/public_mm/bin/metamap16')
 
 output_dict = wrapper.f(sentence)
 for key in output_dict:
@@ -10,4 +17,3 @@ for key in output_dict:
     concept_dict = output_dict[key]
     for concept_key in concept_dict:
         print concept_key + ': ' + concept_dict[concept_key]
-a = 1

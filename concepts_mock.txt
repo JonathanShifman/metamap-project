@@ -1,8 +1,0 @@
-1|MM|0|Hypertension|0|[Disease or Syndrome:Finding]|[""-tx-1-""]|TX|1:12|0
-1|MM|0|Multifactorial|0|[Finding]|[""-tx-1-""]|TX|19:14|0
-1|MM|0|Disease|0|[Disease or Syndrome]|[""-tx-1-""]|TX|34:7|0
-1|MM|0|Involving|0|[Functional Concept]|[""-tx-1-""]|TX|42:9|0
-1|MM|0|Nervous|0|[Sign or Symptom:Functional Concept]|[""-tx-1-""]|TX|56:7|0
-1|MM|0|Renal|0|[Body Part, Organ, or Organ Component]|[""-tx-1-""]|TX|65:5|0
-1|MM|0|Cardiovascular Systems|0|[Body System]|[""-tx-1-""]|TX|76:22|0
-2|MM|0|Macrophages|0|[Cell:Laboratory Procedure:Intellectual Product:Body Substance]|[""-tx-1-""]|TX|1:11|0
