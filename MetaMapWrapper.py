@@ -26,13 +26,12 @@ class MetaMapWrapper(object):
 
     '''
         :param str sentence: The sentence to analyze
-        :return: A dictionary of concept dictionaries
+        :return: A list of concept dictionaries
     '''
     def analyze_sentence(self, sentence):
         concepts, error = self.meta_map.extract_concepts([sentence], [1])
-        output_dict = dict()
+        output_list = []
 
-        current_index = 1
         for concept in concepts:
             concept_dict = dict()
 
@@ -45,7 +44,6 @@ class MetaMapWrapper(object):
             concept_dict['original_name'] = original_name
             concept_dict['starting_index'] = starting_index
 
-            output_dict[current_index] = concept_dict
-            current_index += 1
+            output_list.append(concept_dict)
 
-        return output_dict
+        return output_list
