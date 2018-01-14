@@ -10,6 +10,7 @@ class MetaMapWrapper(object):
         # Read path to the MetaMap binary release from configuration
         meta_map_path = config.get('general', 'meta_map_path')
         self.meta_map = MetaMap.get_instance(meta_map_path)
+
         # Get relevant field names, i.e. score, cui, preferred_name...
         self.relevant_field_names = config.get('general', 'relevant_field_names').split(',')
 
@@ -28,7 +29,7 @@ class MetaMapWrapper(object):
         :param str sentence: The sentence to analyze
         :return: A list of concept dictionaries
     '''
-    def analyze_sentence(self, sentence):
+    def analyze_sentence(self, sentence, sentence_index=0):
         concepts, error = self.meta_map.extract_concepts([sentence], [1])
         output_list = []
 
@@ -39,11 +40,24 @@ class MetaMapWrapper(object):
             for field_name in self.relevant_field_names:
                 concept_dict[field_name] = getattr(concept, field_name)
 
-            # Store original name and starting index in concept dict
+            # Store original name, starting index and sentence_index in concept dict
             original_name, starting_index = self.extract_data_from_pos_info(sentence, concept.pos_info)
             concept_dict['original_name'] = original_name
             concept_dict['starting_index'] = starting_index
+            concept_dict['sentence_index'] = sentence_index
 
             output_list.append(concept_dict)
 
+        return output_list
+
+    '''
+        :param str sentences: A list of sentences to analyze
+        :return: A list of concept dictionaries. Each dictionary specifies the appropriate sentence index.
+    '''
+    def analyze_sentences(self, sentences):
+        output_list = []
+        current_sentence_index = 0
+        for sentence in sentences:
+            sentence_output_list = self.analyze_sentence(sentence, current_sentence_index)
+            output_list.extend(sentence_output_list)
         return output_list
