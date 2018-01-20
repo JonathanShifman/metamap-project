@@ -9,5 +9,5 @@ running_index = 1
 for concept_dict in output_list:
     print running_index
     for concept_key in concept_dict:
-        print concept_key + ': ' + concept_dict[concept_key]
+        print concept_key + ': ' + str(concept_dict[concept_key])
     running_index += 1
