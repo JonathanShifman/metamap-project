@@ -24,7 +24,7 @@ class MetaMapWrapper(object):
         original_name_components = []
         mappings = []
         for pos_info in pos_info_list:
-            split_pos_info = pos_infos.split('/')
+            split_pos_info = pos_info.split('/')
             starting_index = int(split_pos_info[0]) - 1
             length = int(split_pos_info[1])
             mappings.append([starting_index, length])
@@ -50,7 +50,7 @@ class MetaMapWrapper(object):
             # Store original name, starting index and sentence_index in concept dict
             original_name, mappings = self.extract_data_from_pos_infos(sentence, concept.pos_info)
             concept_dict['original_name'] = original_name
-            concept_dict['mapping'] = mappings
+            concept_dict['mappings'] = mappings
             concept_dict['sentence_index'] = sentence_index
 
             output_list.append(concept_dict)
