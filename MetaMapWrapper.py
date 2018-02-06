@@ -19,11 +19,18 @@ class MetaMapWrapper(object):
         :param str pos_info: Concept pos_info value as returned from MetaMap
         :return: The original concept and its index in the sentence
     '''
-    def extract_data_from_pos_info(self, sentence, pos_info):
-        split_pos_info = pos_info.split('/')
-        starting_index = int(split_pos_info[0]) - 1
-        length = int(split_pos_info[1])
-        return sentence[starting_index:starting_index+length], str(starting_index)
+    def extract_data_from_pos_infos(self, sentence, pos_infos):
+        pos_info_list = pos_infos.split(',')
+        original_name_components = []
+        mappings = []
+        for pos_info in pos_info_list:
+            split_pos_info = pos_infos.split('/')
+            starting_index = int(split_pos_info[0]) - 1
+            length = int(split_pos_info[1])
+            mappings.append([starting_index, length])
+            component = sentence[starting_index:starting_index+length]
+            original_name_components.append(component)
+        return " ".join(original_name_components), mappings
 
     '''
         :param str sentence: The sentence to analyze
@@ -41,9 +48,9 @@ class MetaMapWrapper(object):
                 concept_dict[field_name] = getattr(concept, field_name)
 
             # Store original name, starting index and sentence_index in concept dict
-            original_name, starting_index = self.extract_data_from_pos_info(sentence, concept.pos_info)
+            original_name, mappings = self.extract_data_from_pos_infos(sentence, concept.pos_info)
             concept_dict['original_name'] = original_name
-            concept_dict['starting_index'] = starting_index
+            concept_dict['mapping'] = mappings
             concept_dict['sentence_index'] = sentence_index
 
             output_list.append(concept_dict)
