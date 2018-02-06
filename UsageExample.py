@@ -1,9 +1,9 @@
 from MetaMapWrapper import *
 
 wrapper = MetaMapWrapper()
-text = 'Hypertension is a multifactorial disease involving the nervous, renal, ' \
-           'and cardiovascular systems. '
-output_list = wrapper.analyze_sentence([text])
+texts = ['Hypertension is a multifactorial disease involving the nervous, renal, ' \
+           'and cardiovascular systems. ']
+output_list = wrapper.analyze_texts(texts)
 
 running_index = 1
 for concept_dict in output_list:
