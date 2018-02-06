@@ -51,7 +51,7 @@ class MetaMapWrapper(object):
             # Store original name, starting index and text_index in concept dict
             text_index = int(concept.index) - 1
             concept_dict['text_index'] = text_index
-            original_name, mappings = self.extract_data_from_pos_infos(text_index, concept.pos_info)
+            original_name, mappings = self.extract_data_from_pos_infos(texts[text_index], concept.pos_info)
             concept_dict['original_name'] = original_name
             concept_dict['mappings'] = mappings
 
